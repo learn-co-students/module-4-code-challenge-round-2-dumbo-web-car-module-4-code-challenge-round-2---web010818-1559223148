@@ -15,7 +15,7 @@ const renderTransactionTables=()=>{
     ||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
     // || transaction.amount.toString().includes(props.searchTerm)
     // || transaction.posted_at.toLowerCase().includes(props.searchTerm.toLowerCase())
-  ){return <Transaction {...transaction}/>}else{return null}
+  ){return <Transaction key={transaction.id}{...transaction}/>}else{return null}
   })
 }
 
