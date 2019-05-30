@@ -9,6 +9,7 @@ const renderTransactionTables=()=>{
       transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
     ||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
     || transaction.amount.toString().includes(props.searchTerm)
+    || transaction.posted_at.toLowerCase().includes(props.searchTerm.toLowerCase())
       )
     {
     return(
