@@ -1,14 +1,20 @@
 import React from 'react'
+import AccountContainer from './AccountContainer'
+import TransactionList from './TransactionsList'
+
 
 const Transaction = () => {
+ 
   return (
+ 
     <tr>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
-      <td>{"...your code here"}</td>
+      <td>{}</td>
+      <td>{}</td>
+      <td>{}</td>
+      <td>{}</td>
     </tr>
   )
 }
 
 export default Transaction
+// this.props.alltrans.transObj.posted_at
