@@ -1,6 +1,24 @@
 import React from 'react'
+import Transaction from './Transaction'
 
-const TransactionsList = () => {
+const TransactionsList = (props) => {
+
+
+
+
+
+
+const renderTransactionTables=()=>{
+  return props.transactions.map(transaction=>{
+    if(
+      transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
+    ||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
+    // || transaction.amount.toString().includes(props.searchTerm)
+    // || transaction.posted_at.toLowerCase().includes(props.searchTerm.toLowerCase())
+  ){return <Transaction key={transaction.id}{...transaction}/>}else{return null}
+  })
+}
+
 
   return (
     <table className="ui celled striped padded table">
@@ -28,7 +46,7 @@ const TransactionsList = () => {
           </th>
         </tr>
 
-        {"... your code here..."}
+        {renderTransactionTables()}
 
       </tbody>
     </table>
