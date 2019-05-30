@@ -5,7 +5,12 @@ const TransactionsList = (props) => {
 
 const renderTransactionTables=()=>{
   return props.transactions.map(transaction=>{
-    if(transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())){
+    if(
+      transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
+    ||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
+    || transaction.amount.toString().includes(props.searchTerm)
+      )
+    {
     return(
       <tr>
         <th>
