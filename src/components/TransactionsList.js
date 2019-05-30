@@ -1,6 +1,11 @@
 import React from 'react'
+import Transaction from './Transaction'
 
 const TransactionsList = (props) => {
+
+
+
+
 
 
 const renderTransactionTables=()=>{
@@ -8,34 +13,9 @@ const renderTransactionTables=()=>{
     if(
       transaction.description.toLowerCase().includes(props.searchTerm.toLowerCase())
     ||transaction.category.toLowerCase().includes(props.searchTerm.toLowerCase())
-    || transaction.amount.toString().includes(props.searchTerm)
-    || transaction.posted_at.toLowerCase().includes(props.searchTerm.toLowerCase())
-      )
-    {
-    return(
-      <tr>
-        <th>
-          <h3 className="ui center aligned header">
-            {transaction.posted_at}
-          </h3>
-        </th>
-        <th>
-          <h3 className="ui center aligned header">
-            {transaction.description}
-          </h3>
-        </th>
-        <th>
-          <h3 className="ui center aligned header">
-            {transaction.category}
-          </h3>
-        </th>
-        <th>
-          <h3 className="ui center aligned header">
-            {transaction.amount}
-          </h3>
-        </th>
-      </tr>
-    )}else{return null}
+    // || transaction.amount.toString().includes(props.searchTerm)
+    // || transaction.posted_at.toLowerCase().includes(props.searchTerm.toLowerCase())
+  ){return <Transaction {...transaction}/>}else{return null}
   })
 }
 
