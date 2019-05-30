@@ -27,11 +27,15 @@ class AccountContainer extends Component {
       })
   }
 
-
+  setSearchTerm = (term) => {
+      this.setState({
+        searchTerm: term
+      })
+  }
 
   handleChange(term) {
     let newArr = [...this.state.transactions].filter(transaction => {
-      transaction.description.includes(term)
+      transaction.description.includes(this.state.searchTerm)
     })
     this.setState({
        transactions: newArr
